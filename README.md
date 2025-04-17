@@ -1,59 +1,106 @@
-<div align="center">
-    <img src="./app/src/main/ic_launcher-playstore.png" width="128" height="128" style="display: block; margin: 0 auto"/>
-    <h1>ViMusic</h1>
-    <p>An Android application for streaming music from YouTube Music</p>
-</div>
+# ViMusic 🎵
+**Open Source Music Streaming App**  
+*In-depth Analysis and Viva Preparation*
+
+## Contributors
+- Devershi  
+- Satvik  
+- Shubham  
+- Triambika  
 
 ---
 
-<p align="center">
-  <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" width="30%" />
-  <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" width="30%" />
-  <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" width="30%" />
+## 📱 What is ViMusic?
+ViMusic is an open-source Android music streaming app that fetches and plays songs directly from YouTube Music using a reverse-engineered API. It provides:
+- Ad-free, background playback
+- Modern UI built with Jetpack Compose
+- Lightweight and privacy-respecting streaming experience
 
-  <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" width="30%" />
-  <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/5.jpg" width="30%" />
-  <img src="./fastlane/metadata/android/en-US/images/phoneScreenshots/6.jpg" width="30%" />
-</p>
+---
 
-## Features
-- Play (almost) any song or video from YouTube Music
-- Background playback
-- Cache audio chunks for offline playback
-- Search for songs, albums, artists videos and playlists
-- Bookmark artists and albums
-- Import playlists
-- Fetch, display and edit songs lyrics or synchronized lyrics
-- Local playlist management
-- Reorder songs in playlist or queue
-- Light/Dark/Dynamic theme
-- Skip silence
-- Sleep timer
-- Audio normalization
-- Android Auto
-- Persistent queue
-- Open YouTube/YouTube Music links (`watch`, `playlist`, `channel`)
-- ...
+## 🛠️ Tech Stack & Architecture
+- **Kotlin + Jetpack Compose** for UI
+- **ExoPlayer** for media playback
+- **Innertube API** (reverse-engineered YouTube API)
+- **MVVM-like architecture**: UI → ViewModel → Service → API/DB
 
-## Installation
+---
 
-[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png"
-    alt="Get it on GitHub"
-    height="80">](https://github.com/vfsfitvnm/ViMusic/releases/latest)
-[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
-     alt="Get it on IzzyOnDroid"
-     height="80">](https://apt.izzysoft.de/fdroid/index/apk/it.vfsfitvnm.vimusic)
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-     alt="Get it on F-Droid"
-     height="80">](https://f-droid.org/packages/it.vfsfitvnm.vimusic/)
+## 🎨 UI Layer
+- Fully built using **Jetpack Compose**
+- Reactive updates via **State** and **Flow**
+- Screens include:
+  - `HomeScreen`
+  - `PlayerScreen`
+  - `SearchScreen`
+  - `SettingsScreen`
+  - `PlaylistScreen`
 
-## Acknowledgments
-- [**YouTube-Internal-Clients**](https://github.com/zerodytrash/YouTube-Internal-Clients): A python script that discovers hidden YouTube API clients. Just a research project.
-- [**ionicons**](https://github.com/ionic-team/ionicons): Premium hand-crafted icons built by Ionic, for Ionic apps and web apps everywhere.
+---
 
-<a href="https://www.flaticon.com/authors/ilham-fitrotul-hayat" title="music icons">App icon based on icon created by Ilham Fitrotul Hayat - Flaticon</a>
+## 🌐 Innertube API Integration
+ViMusic interacts with YouTube’s private Innertube API:
+- Communicates via `POST` requests
+- Handles:
+  - 🔍 Search
+  - 🎵 Streaming URLs
+  - 📜 Playlist data
+  - 📈 Recommendations
 
-## Disclaimer
-This project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way associated with YouTube, Google LLC or any of its affiliates and subsidiaries.
+---
 
-Any trademark, service mark, trade name, or other intellectual property rights used in this project are owned by the respective owners.
+## ⭐ Key Features
+- Real-time search and playback
+- Background playback with media controls
+- Playlist creation & recently played support
+- No ads, clean and modern design
+- Dark mode support
+
+---
+
+## 🗃️ Database and Caching
+- Local storage includes:
+  - ⭐ Favorites
+  - 🕓 Recently played
+  - 🔎 Search history
+- Likely powered by **Room** or raw **SQLite**
+- Improves performance and offline readiness
+
+---
+
+## 🧠 Depth: Approaches Taken
+- Modern Android stack:
+  - Jetpack Compose
+  - Kotlin Coroutines
+  - Flow for reactive streams
+  - ExoPlayer for seamless media control
+- Clean MVVM-inspired separation of concerns
+
+---
+
+## 🧩 Depth: Data Structures Used
+- **Data Classes** for Tracks, Albums, Playlists
+- **Flow/State** for reactive UI
+- **HashMaps** and **Lists** for JSON parsing and caching
+- **ExoPlayer queues** and buffer handling
+
+---
+
+## ⚖️ Depth: Tradeoffs Made
+- **Innertube API**:
+  - ✔️ Free & flexible
+  - ❌ Unofficial → may break with changes
+- **Jetpack Compose**:
+  - ✔️ Declarative & modern
+  - ❌ Still evolving with limited legacy support
+- **Future Plans**:
+  - Offline support
+  - Smarter caching
+  - YouTube login integration
+
+---
+
+## ✅ Conclusion
+ViMusic is a powerful demonstration of modern Android development:
+- Hands-on usage of **Jetpack Compose**, **ExoPlayer**, and **custom API handling**
+- Ideal for those exploring **full-stack Android** and **media apps**
